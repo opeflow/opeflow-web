@@ -22,7 +22,8 @@ export const API_CONFIG = {
     TIME_CLOCK: { CURRENT: '/ponto/me', HISTORY: '/ponto/me/historico', START: '/ponto/iniciar', STOP: '/ponto/encerrar', REQUEST: (id) => `/ponto/${id}/solicitar-ajuste`, ENTRIES: '/ponto/gerenciar', ADJUSTMENTS: '/ponto/ajustes', REVIEW: (id) => `/ponto/ajustes/${id}` },
     EXTERNAL_ACCESS_EXCHANGE: '/autenticacao/acesso-externo/trocar',
     EXTERNAL_ACCESS_PROFILE: '/perfil/acesso-externo',
-    EXTERNAL_ACCESS_ROTATE: '/perfil/acesso-externo/rotacionar',
+    LOGS: '/logs',
+    LOGS_AUDIT: '/logs/auditoria',
     AUTH: {
         LOGIN: '/autenticacao/login',
         INTERNAL_LOGIN: '/autenticacao/login-interno',

@@ -74,9 +74,6 @@ const copyExternalLink = async () => {
     toast.add({ severity: 'success', summary: 'Copiado', detail: 'Link do painel externo copiado.', life: 2500 });
 };
 
-const rotateExternalLink = async () => {
-    try { const response = await Axios.post(API_CONFIG.EXTERNAL_ACCESS_ROTATE); externalLink.value = response.data; await copyExternalLink(); toast.add({ severity: 'success', summary: 'Link atualizado', detail: 'O link anterior foi invalidado.', life: 3500 }); } catch (error) { toast.add({ severity: 'error', summary: 'Erro', detail: error.response?.data?.msg || 'Não foi possível gerar o link.', life: 5000 }); }
-};
 
 const loadSettings = async () => {
     loading.value = true;
@@ -164,12 +161,9 @@ onMounted(loadSettings);
                         <label for="externalAccessLink" class="block text-900 font-medium mb-2">Link individual do painel externo</label>
                         <div class="flex flex-column md:flex-row gap-2">
                             <InputText id="externalAccessLink" :modelValue="externalLink?.url || 'Nenhum link criado'" readonly class="w-full" />
-                            <div class="flex gap-2">
-                                <Button icon="pi pi-copy" label="Copiar" :disabled="!externalLink?.url" @click="copyExternalLink" />
-                                <Button icon="pi pi-refresh" label="Rotacionar" severity="secondary" @click="rotateExternalLink" v-tooltip.top="'Invalida o link anterior e cria um novo'" />
-                            </div>
+                            <Button icon="pi pi-copy" label="Copiar" :disabled="!externalLink?.url" @click="copyExternalLink" />
                         </div>
-                        <small class="text-600">O link é exclusivo deste usuário. Ao rotacionar, o link anterior deixa de funcionar.</small>
+                        <small class="text-600">O link é exclusivo deste usuário. A geração e a rotação são feitas na gestão de usuários.</small>
                     </div>
                 </div>
                 <Button label="Salvar" icon="pi pi-check" :loading="loading" @click="saveProfile()" />

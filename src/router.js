@@ -53,6 +53,7 @@ const router = createRouter({
                     component: () => import('@/views/services/Services.vue')
                 },
                 { path: '/ponto', name: 'ponto', meta: { permission: 'ponto.acesso' }, component: () => import('@/views/timeClock/TimeClock.vue') },
+                { path: '/logs', name: 'logs', meta: { permission: 'logs.acesso' }, component: () => import('@/views/logs/Logs.vue') },
                 {
                     path: '/usuarios',
                     name: 'usuarios',

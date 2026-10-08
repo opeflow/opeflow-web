@@ -6,6 +6,7 @@ const routeConfig = {
     '/estoque': { label: 'Estoque', to: '/estoque', icon: 'pi pi-fw pi-box', permission: 'estoque.acesso' },
     '/usuarios': { label: 'Usuários', to: '/usuarios', icon: 'pi pi-fw pi-user', permission: 'usuarios.acesso' },
     '/ponto': { label: 'Ponto', to: '/ponto', icon: 'pi pi-fw pi-clock', permission: 'ponto.acesso' },
+    '/logs': { label: 'Logs', to: '/logs', icon: 'pi pi-fw pi-list', permission: 'logs.acesso' },
     '/dados-basicos': {
         label: 'Dados Básicos',
         to: '/dados-basicos',
@@ -24,6 +25,7 @@ export const MENU_SECTIONS = [
             routeConfig['/clientes'],
             routeConfig['/estoque'],
             routeConfig['/ponto'],
+            routeConfig['/logs'],
             {
                 label: 'Definições',
                 icon: 'pi pi-fw pi-cog',
